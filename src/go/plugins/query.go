@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"sort"
 	"strings"
 
 	"github.com/BurntSushi/toml"
@@ -136,6 +137,11 @@ func RefreshPlugin(plugin *Plugin) error {
 			}
 		}
 	}
+
+	sort.Slice(plugin.Metadata.Versions, func(i, j int) bool {
+		return plugin.Metadata.Versions[i].Version > plugin.Metadata.Versions[j].Version
+	})
+
 	return nil
 }
 
