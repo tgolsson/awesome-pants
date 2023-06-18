@@ -79,8 +79,8 @@ jobs:
     - name: Validate that tailor files are up to date
       run: |
         ./get-pants.sh
-        /home/runner/bin/pants run cmd:bin -- refresh resources/plugins.toml  resources/plugins.gen.toml
-        git diff --exit-code test
+        /home/runner/bin/pants run cmd:bin -- refresh resources/plugins.toml resources/plugins.gen.toml
+        git diff --exit-code resources/plugins.gen.toml
 
   try-build-website:
     runs-on: ubuntu-20.04
@@ -101,4 +101,4 @@ jobs:
       run: |
         ./get-pants.sh
         /home/runner/bin/pants run cmd:bin -- gen-readme resources/plugins.gen.toml resources/adhoc.toml resources/README.tmpl.md README.md
-        git diff --exit-code test
+        git diff --exit-code README.md
