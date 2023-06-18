@@ -92,7 +92,7 @@ jobs:
         ./get-pants.sh
         /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml resources/manifest.toml output/
 
--regenerate-redme:
+  regenerate-readme:
     runs-on: ubuntu-20.04
 
     steps:

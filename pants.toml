@@ -9,9 +9,12 @@ backend_packages = [
   "pants.backend.shell",
 ]
 
+[cli.alias]
+generate = "run //cmd:generate-readme"
+
 [source]
 root_patterns = [
-  '/src/go/generator/',
+  '/src/go',
 ]
 
 [anonymous-telemetry]
