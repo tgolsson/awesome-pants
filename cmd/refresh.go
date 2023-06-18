@@ -23,5 +23,5 @@ func refresh(path, output string) error {
 		data.Plugins[i] = plugin
 	}
 
-	return plugins.WriteCollection(path, data)
+	return plugins.WriteCollection(output, data)
 }

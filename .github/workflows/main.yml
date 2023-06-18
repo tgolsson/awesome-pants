@@ -1,0 +1,104 @@
+name: Validate PR
+
+on:
+  push:
+    branches: [ "main" ]
+
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Initialize Pants
+      uses: pantsbuild/actions/init-pants@main
+      with:
+        # cache0 makes it easy to bust the cache if needed
+        gha-cache-key: cache1-test-pants${{ matrix.pants-version }}
+        named-caches-hash: ${{ hashFiles('pants-plugins/*.lock') }}
+
+    - name: Test everything
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants test ::
+
+  package:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Initialize Pants
+      uses: pantsbuild/actions/init-pants@main
+      with:
+        # cache0 makes it easy to bust the cache if needed
+        gha-cache-key: cache1-package-pants${{ matrix.pants-version }}
+        named-caches-hash: ${{ hashFiles('pants-plugins/*.lock') }}
+
+    - name: Package all targets
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants package ::
+
+  check-and-lint:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Initialize Pants
+      uses: pantsbuild/actions/init-pants@main
+      with:
+        # cache0 makes it easy to bust the cache if needed
+        gha-cache-key: cache1-check-pants${{ matrix.pants-version }}
+        named-caches-hash: ${{ hashFiles('pants-plugins/*.lock') }}
+
+    - name: Run linters on all targets
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants update-build-files --check lint check ::
+
+  validate-tailor:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Validate that tailor files are up to date
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants tailor --check ::
+
+  try-regenerate-toml:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate plugins.gen.toml and validate that it is up to date.
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants run cmd:bin -- refresh resources/plugins.toml resources/plugins.gen.toml
+        git diff --exit-code resources/plugins.gen.toml
+
+  try-build-website:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate Website and validate there are no errors
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
+
+  try-regenerate-redme:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Generate README and validate it is up to date.
+      run: |
+        ./get-pants.sh
+        /home/runner/bin/pants run cmd:bin -- gen-readme resources/plugins.gen.toml resources/adhoc.toml resources/README.tmpl.md README.md
+        git diff --exit-code README.md

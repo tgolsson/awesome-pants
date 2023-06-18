@@ -1,0 +1,5 @@
+[GLOBAL]
+colors = true
+
+[stats]
+log = true
