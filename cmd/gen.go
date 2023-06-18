@@ -17,7 +17,8 @@ import (
 )
 
 type ManifestData struct {
-	Static []string `toml:"static"`
+	Files []string `toml:"files"`
+	Root  string   `toml:"root"`
 }
 type Manifest struct {
 	ManifestData ManifestData `toml:"manifest"`
@@ -37,7 +38,7 @@ func copyFile(src, dst string) error {
 	fmt.Printf("Copying %s to %s\n", src, dst)
 	sourceFileStat, err := os.Stat(src)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to stat %s: %w", src, err)
 	}
 
 	if !sourceFileStat.Mode().IsRegular() {
@@ -46,14 +47,13 @@ func copyFile(src, dst string) error {
 
 	source, err := os.Open(src)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to open %s: %w", src, err)
 	}
 	defer source.Close()
 
-	filename := filepath.Base(src)
-	destination, err := os.Create(filepath.Join(dst, filename))
+	destination, err := os.Create(dst)
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to create %s: %w", dst, err)
 	}
 	defer destination.Close()
 
@@ -118,25 +118,27 @@ func copyDir(src, dst string) error {
 }
 
 func copyStaticFiles(manifest *Manifest, outputPath string) error {
-	outputPath = fmt.Sprintf("%s/static/", outputPath)
 	outputPath, err := ensureOutputPath(outputPath)
 	if err != nil {
-
 		return err
 	}
-	for _, path := range manifest.ManifestData.Static {
-		fileInfo, err := os.Stat(path)
+
+	for _, path := range manifest.ManifestData.Files {
+		rootedPath := fmt.Sprintf("%s/%s", manifest.ManifestData.Root, path)
+		fileInfo, err := os.Stat(rootedPath)
 		if err != nil {
-			return err
+			return fmt.Errorf("failed to stat %s: %w", rootedPath, err)
 		}
 
+		rootedOutputPath := fmt.Sprintf("%s%s", outputPath, path)
+
 		if fileInfo.IsDir() {
-			err := copyDir(path, outputPath)
+			err := copyDir(rootedPath, rootedOutputPath)
 			if err != nil {
 				return err
 			}
 		} else {
-			err := copyFile(path, outputPath)
+			err := copyFile(rootedPath, rootedOutputPath)
 			if err != nil {
 				return err
 			}

@@ -65,7 +65,9 @@ func genRecipesBody(sb *strings.Builder, cache interface{}) error {
 func genRecipesHtml(cache *recipes.AdhocRecipes) (string, error) {
 	var sb strings.Builder
 	err := genScoped(&sb, "html", cache, func(sb *strings.Builder, cache interface{}) error {
-		err := genScoped(sb, "head", cache, genHead)
+		err := genScoped(sb, "head", cache, func(sb *strings.Builder, cache interface{}) error {
+			return genHead(sb, cache, "Adhoc Recipes")
+		})
 		if err != nil {
 			return err
 		}

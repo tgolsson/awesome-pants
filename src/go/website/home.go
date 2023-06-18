@@ -29,7 +29,9 @@ If you have a plugin you'd like to add, please <a href="https://github.com/tgols
 func genHomeHtml() (string, error) {
 	var sb strings.Builder
 	err := genScoped(&sb, "html", nil, func(sb *strings.Builder, cache interface{}) error {
-		err := genScoped(sb, "head", cache, genHead)
+		err := genScoped(sb, "head", cache, func(sb *strings.Builder, cache interface{}) error {
+			return genHead(sb, cache, "")
+		})
 		if err != nil {
 			return err
 		}

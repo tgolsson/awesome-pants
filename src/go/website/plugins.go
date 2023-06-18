@@ -99,7 +99,9 @@ func genBody(sb *strings.Builder, cache interface{}) error {
 func genPluginHtml(cache *plugins.PluginsCache) (string, error) {
 	var sb strings.Builder
 	err := genScoped(&sb, "html", cache, func(sb *strings.Builder, cache interface{}) error {
-		err := genScoped(sb, "head", cache, genHead)
+		err := genScoped(sb, "head", cache, func(sb *strings.Builder, cache interface{}) error {
+			return genHead(sb, cache, "Community Plugins")
+		})
 		if err != nil {
 			return err
 		}

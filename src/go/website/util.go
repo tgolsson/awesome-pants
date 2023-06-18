@@ -25,8 +25,14 @@ func genScopedWithClass(sb *strings.Builder, scope string, class string, cache i
 	return nil
 }
 
-func genHead(sb *strings.Builder, cache interface{}) error {
-	sb.WriteString("<title>Plugin Documentation</title>")
+func genHead(sb *strings.Builder, cache interface{}, pageTitle string) error {
+	if pageTitle == "" {
+		pageTitle = "Awesome Pants"
+	} else {
+		pageTitle = fmt.Sprintf("Awesome Pants - %s", pageTitle)
+	}
+
+	sb.WriteString(fmt.Sprintf("<title>%s</title>", pageTitle))
 	sb.WriteString(`<link href="
 https://cdn.jsdelivr.net/npm/chota@0.9.2/dist/chota.min.css
 " rel="stylesheet">`)
