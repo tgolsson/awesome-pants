@@ -76,7 +76,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Validate that tailor files are up to date
+    - name: Generate plugins.gen.toml and validate that it is up to date.
       run: |
         ./get-pants.sh
         /home/runner/bin/pants run cmd:bin -- refresh resources/plugins.toml resources/plugins.gen.toml
@@ -87,7 +87,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Validate that tailor files are up to date
+    - name: Generate Website and validate there are no errors
       run: |
         ./get-pants.sh
         /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
@@ -97,7 +97,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Validate that tailor files are up to date
+    - name: Generate README and validate it is up to date.
       run: |
         ./get-pants.sh
         /home/runner/bin/pants run cmd:bin -- gen-readme resources/plugins.gen.toml resources/adhoc.toml resources/README.tmpl.md README.md
