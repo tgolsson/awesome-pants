@@ -37,7 +37,7 @@ jobs:
       - name: Build docs
         run: |
           ./get-pants.sh
-          pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
+          pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml resources/manifest.toml output/
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
