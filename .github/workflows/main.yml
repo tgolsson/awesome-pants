@@ -90,9 +90,9 @@ jobs:
     - name: Generate Website and validate there are no errors
       run: |
         ./get-pants.sh
-        /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
+        /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml resources/manifest.toml output/
 
-  try-regenerate-redme:
+-regenerate-redme:
     runs-on: ubuntu-20.04
 
     steps:
