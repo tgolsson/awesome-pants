@@ -1,4 +1,4 @@
-name: Validate PR
+() name: Validate PR
 
 on:
   push:
@@ -79,7 +79,7 @@ jobs:
     - name: Validate that tailor files are up to date
       run: |
         ./get-pants.sh
-        pants run cmd:bin -- refresh resources/plugins.toml  resources/plugins.gen.toml
+        /home/runner/bin/pants run cmd:bin -- refresh resources/plugins.toml  resources/plugins.gen.toml
         git diff --exit-code test
 
   try-build-website:
@@ -90,7 +90,7 @@ jobs:
     - name: Validate that tailor files are up to date
       run: |
         ./get-pants.sh
-        pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
+        /home/runner/bin/pants run cmd:bin -- gen resources/plugins.gen.toml resources/adhoc.toml output/
 
   try-regenerate-redme:
     runs-on: ubuntu-20.04
@@ -100,5 +100,5 @@ jobs:
     - name: Validate that tailor files are up to date
       run: |
         ./get-pants.sh
-        pants run cmd:bin -- gen-readme resources/plugins.gen.toml resources/adhoc.toml resources/README.tmpl.md README.md
+        /home/runner/bin/pants run cmd:bin -- gen-readme resources/plugins.gen.toml resources/adhoc.toml resources/README.tmpl.md README.md
         git diff --exit-code test
