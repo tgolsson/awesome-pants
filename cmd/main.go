@@ -16,6 +16,7 @@ var CLI struct {
 	Gen struct {
 		Path        string `arg:"" name:"path" help:"Paths to generate." type:"path"`
 		RecipesPath string `arg:"" name:"recipes-path" help:"Path to recipes." type:"path"`
+		Manifest    string `arg:"" name:"manifest" help:"Path to manifest." type:"path"`
 		Output      string `arg:"" name:"output" help:"Output path." type:"path"`
 	} `cmd:"" help:"Generates the plugins."`
 
@@ -33,8 +34,8 @@ func main() {
 	switch strings.TrimSpace(ctx.Command()) {
 	case "refresh <path> <output>":
 		refresh(CLI.Refresh.Path, CLI.Refresh.Output)
-	case "gen <path> <recipes-path> <output>":
-		err := gen(CLI.Gen.Path, CLI.Gen.RecipesPath, CLI.Gen.Output)
+	case "gen <path> <recipes-path> <manifest> <output>":
+		err := gen(CLI.Gen.Path, CLI.Gen.RecipesPath, CLI.Gen.Manifest, CLI.Gen.Output)
 		if err != nil {
 			fmt.Println(err)
 		}
