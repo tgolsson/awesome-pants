@@ -1,12 +1,13 @@
 package main
 
 import (
-	"file/filepath"
 	"fmt"
 	"io"
 	"io/ioutil"
 	"os"
+	"path/filepath"
 	"strings"
+	"syscall"
 
 	"github.com/BurntSushi/toml"
 
@@ -15,12 +16,15 @@ import (
 	"github.com/tgolsson/awesome-pants/src/go/website"
 )
 
-type manifest struct {
+type ManifestData struct {
 	Static []string `toml:"static"`
 }
+type Manifest struct {
+	ManifestData ManifestData `toml:"manifest"`
+}
 
-func loadManifest(path string) (*manifest, error) {
-	var m manifest
+func loadManifest(path string) (*Manifest, error) {
+	var m Manifest
 	_, err := toml.DecodeFile(path, &m)
 	if err != nil {
 		return nil, err
@@ -30,6 +34,7 @@ func loadManifest(path string) (*manifest, error) {
 }
 
 func copyFile(src, dst string) error {
+	fmt.Printf("Copying %s to %s\n", src, dst)
 	sourceFileStat, err := os.Stat(src)
 	if err != nil {
 		return err
@@ -45,16 +50,19 @@ func copyFile(src, dst string) error {
 	}
 	defer source.Close()
 
-	destination, err := os.Create(dst)
+	filename := filepath.Base(src)
+	destination, err := os.Create(filepath.Join(dst, filename))
 	if err != nil {
 		return err
 	}
 	defer destination.Close()
+
 	_, err = io.Copy(destination, source)
 	return err
 }
 
 func copyDir(src, dst string) error {
+	fmt.Printf("Copying %s to %s\n", src, dst)
 	entries, err := os.ReadDir(src)
 	if err != nil {
 		return err
@@ -75,7 +83,7 @@ func copyDir(src, dst string) error {
 
 		switch fileInfo.Mode() & os.ModeType {
 		case os.ModeDir:
-			dstPath, err := ensureOutputPath(dstPath, fileInfo.Mode())
+			dstPath, err := ensureOutputPath(dstPath)
 			if err != nil {
 				return err
 			}
@@ -109,13 +117,14 @@ func copyDir(src, dst string) error {
 	return nil
 }
 
-func copyStaticFiles(manifest *manifest, outputPath string) error {
+func copyStaticFiles(manifest *Manifest, outputPath string) error {
 	outputPath = fmt.Sprintf("%s/static/", outputPath)
 	outputPath, err := ensureOutputPath(outputPath)
 	if err != nil {
+
 		return err
 	}
-	for _, path := range manifest.Static {
+	for _, path := range manifest.ManifestData.Static {
 		fileInfo, err := os.Stat(path)
 		if err != nil {
 			return err
@@ -204,5 +213,7 @@ func gen(path, recipesPath, manifestPath, outputPath string) error {
 	if err != nil {
 		return err
 	}
+
+	fmt.Printf("Copying static files: %v\n", manifest)
 	return copyStaticFiles(manifest, outputPath)
 }
