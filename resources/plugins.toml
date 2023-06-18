@@ -1,0 +1,35 @@
+[[plugins]]
+  name = "pants-backend-oci"
+  pypi = "https://pypi.org/project/pants-backend-oci/"
+  icon = "https://icongr.am/simple/opencontainersinitiative.svg?color=currentColor&colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-backend-mdbook"
+  pypi = "https://pypi.org/project/pants-backend-mdbook/"
+  icon = "https://icongr.am/simple/markdown.svg?color=currentColor&colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-backend-bitwarden"
+  pypi = "https://pypi.org/project/pants-backend-bitwarden/"
+  icon = "https://icongr.am/simple/bitwarden.svg?color=currentColor&colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-backend-secrets"
+  pypi = "https://pypi.org/project/pants-backend-secrets/"
+  icon = "https://icongr.am/material/safe.svg?color=currentColor&colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-backend-kustomize"
+  pypi = "https://pypi.org/project/pants-backend-kustomize/"
+  icon = "https://icongr.am/material/kubernetes.svg?color=currentColor&colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-backend-k8s"
+  pypi = "https://pypi.org/project/pants-backend-k8s/"
+  icon = "https://icongr.am/material/kubernetes.svg?color=currentColor&colored=true"
+  status = "Experimental"

@@ -1,0 +1,19 @@
+[[recipes]]
+name = "SvelteKit building"
+summary = "Driving Sveltekit builds with pNPM and node, and generating an Azure archive."
+author = "Suresh Joshi"
+author_github = "sureshjoshi"
+url = "https://gist.github.com/sureshjoshi/98fb09f2a340f7c1dad270c4887865a0#file-build-pants-sveltekit"
+icons = ["https://icongr.am/simple/javascript.svg?colored=true"]
+
+[[recipes]]
+name = "The Pants adhoc examples repository"
+summary = "A collection of recipes maintained by the Pantsbuild organization."
+author = "The Pantsbuild team"
+author_github = "pantsbuild"
+url = "https://github.com/pantsbuild/example-adhoc"
+icons = [
+    "https://icongr.am/simple/javascript.svg?colored=true",
+    "https://icongr.am/simple/openapiinitiative.svg?colored=true",
+    "/static/antlr.svg"
+]

@@ -1,0 +1,167 @@
+[[plugins]]
+  name = "pants-backend-oci"
+  pypi = "https://pypi.org/project/pants-backend-oci/"
+  status = "Experimental"
+  icon = "https://icongr.am/simple/opencontainersinitiative.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-oci/"
+    summary = "An OCI plugin for the Pants build system"
+    latest_version = "0.3.1"
+    tags = ["pantsbuild", "pants", "docker", "oci", "container"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.1"
+      release_date = "2022-11-17T21:47:11"
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-02-10T15:54:17"
+
+    [[plugins.metadata.versions]]
+      version = "0.3.0"
+      release_date = "2023-03-14T22:07:21"
+
+    [[plugins.metadata.versions]]
+      version = "0.3.1"
+      release_date = "2023-03-16T22:13:55"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.0"
+      release_date = "2022-11-13T15:50:06"
+  [plugins.stats]
+    last_day = 5
+    last_week = 11
+    last_month = 96
+
+[[plugins]]
+  name = "pants-backend-mdbook"
+  pypi = "https://pypi.org/project/pants-backend-mdbook/"
+  status = "Experimental"
+  icon = "https://icongr.am/simple/markdown.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-mdbook/"
+    summary = "A  MdBook documentation builder plugin for the Pants buildsystem."
+    latest_version = "0.1.3"
+    tags = ["pantsbuild", "pants", "backend", "mdbook", "markdown"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.1"
+      release_date = "2022-11-11T23:46:09"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.2"
+      release_date = "2022-11-17T21:50:51"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.3"
+      release_date = "2022-11-18T23:05:56"
+  [plugins.stats]
+    last_day = 2
+    last_week = 17
+    last_month = 141
+
+[[plugins]]
+  name = "pants-backend-bitwarden"
+  pypi = "https://pypi.org/project/pants-backend-bitwarden/"
+  status = "Experimental"
+  icon = "https://icongr.am/simple/bitwarden.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-bitwarden/"
+    summary = "A Bitwarden plugin for the Pants build system"
+    latest_version = "0.1.0"
+    tags = ["pantsbuild", "pants", "backend", "bitwarden"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.0"
+      release_date = "2023-02-10T15:54:08"
+  [plugins.stats]
+    last_day = 1
+    last_week = 2
+    last_month = 9
+
+[[plugins]]
+  name = "pants-backend-secrets"
+  pypi = "https://pypi.org/project/pants-backend-secrets/"
+  status = "Experimental"
+  icon = "https://icongr.am/material/safe.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-secrets/"
+    summary = "A secrets plumbing plugin for the Pants build system"
+    latest_version = "0.1.0"
+    tags = ["pantsbuild", "pants", "backend", "secrets"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.0"
+      release_date = "2023-02-10T15:54:04"
+  [plugins.stats]
+    last_day = 1
+    last_week = 3
+    last_month = 9
+
+[[plugins]]
+  name = "pants-backend-kustomize"
+  pypi = "https://pypi.org/project/pants-backend-kustomize/"
+  status = "Experimental"
+  icon = "https://icongr.am/material/kubernetes.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-kustomize/"
+    summary = "A Kustomize plugin for the Pants build system"
+    latest_version = "0.1.2"
+    tags = ["pantsbuild", "pants", "backend", "kustomize", "kubernetes"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.0"
+      release_date = "2022-11-13T13:07:55"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.1"
+      release_date = "2022-11-17T21:49:58"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.2"
+      release_date = "2023-02-10T15:54:13"
+  [plugins.stats]
+    last_day = 2
+    last_week = 17
+    last_month = 150
+
+[[plugins]]
+  name = "pants-backend-k8s"
+  pypi = "https://pypi.org/project/pants-backend-k8s/"
+  status = "Experimental"
+  icon = "https://icongr.am/material/kubernetes.svg?color=currentColor&colored=true"
+  [plugins.metadata]
+    author = "Tom Solberg"
+    author_email = "me@sbg.dev"
+    website = "https://pypi.org/project/pants-backend-k8s/"
+    summary = "A Kubernetes plugin for the Pants build system"
+    latest_version = "0.1.1"
+    tags = ["pantsbuild", "pants", "backend", "kubernetes"]
+    license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.1.1"
+      release_date = "2022-11-17T21:45:32"
+
+    [[plugins.metadata.versions]]
+      version = "0.1.0"
+      release_date = "2022-11-13T12:46:24"
+  [plugins.stats]
+    last_day = 2
+    last_week = 18
+    last_month = 148
