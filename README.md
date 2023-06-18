@@ -29,10 +29,10 @@ Each list is contained in a separate file in `/resources/`: `plugins` for plugin
 
 ## Recipes
 
-- [SvelteKit building](https://gist.github.com/sureshjoshi/98fb09f2a340f7c1dad270c4887865a0#file-build-pants-sveltekit) by [Suresh Joshi](sureshjoshi)  
+- [SvelteKit building](https://gist.github.com/sureshjoshi/98fb09f2a340f7c1dad270c4887865a0#file-build-pants-sveltekit) by [Suresh Joshi](https://github.com/sureshjoshi)  
   Driving Sveltekit builds with pNPM and node, and generating an Azure archive.
 
-- [The Pants adhoc examples repository](https://github.com/pantsbuild/example-adhoc) by [The Pantsbuild team](pantsbuild)  
+- [The Pants adhoc examples repository](https://github.com/pantsbuild/example-adhoc) by [The Pantsbuild team](https://github.com/pantsbuild)  
   A collection of recipes maintained by the Pantsbuild organization.
 
 
