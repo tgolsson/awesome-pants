@@ -6,7 +6,9 @@ import (
 
 func genHomeBody(sb *strings.Builder, cache interface{}) error {
 	return genScopedWithClass(sb, "div", "container", cache, func(sb *strings.Builder, cache interface{}) error {
-		if err := genScoped(sb, "header", cache, genHeader); err != nil {
+		if err := genScoped(sb, "header", cache, func(sb *strings.Builder, cache interface{}) error {
+			return genHeader(sb, cache, ".")
+		}); err != nil {
 			return err
 		}
 		return genScoped(sb, "main", cache, func(sb *strings.Builder, cache interface{}) error {

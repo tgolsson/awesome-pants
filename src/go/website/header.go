@@ -1,21 +1,22 @@
 package website
 
 import (
+	"fmt"
 	"strings"
 )
 
-func genHeader(sb *strings.Builder, cache interface{}) error {
+func genHeader(sb *strings.Builder, cache interface{}, linkPrefix string) error {
 	genScopedWithClass(sb, "nav", "nav", cache, func(sb *strings.Builder, cache interface{}) error {
 		if err := genScopedWithClass(sb, "div", "nav-left", cache, func(sb *strings.Builder, cache interface{}) error {
-			sb.WriteString("<a class=\"/\" href=\"/\">Home</a>")
-			sb.WriteString("<a href=\"/plugins\">Plugins</a>")
-			sb.WriteString("<a href=\"/recipes\">Adhoc Recipes</a>")
+			sb.WriteString(fmt.Sprintf("<a href=\"%s/\">Home</a>", linkPrefix))
+			sb.WriteString(fmt.Sprintf("<a href=\"%s/plugins\">Plugins</a>", linkPrefix))
+			sb.WriteString(fmt.Sprintf("<a href=\"%s/recipes\">Recipes</a>", linkPrefix))
 			return nil
 		}); err != nil {
 			return err
 		}
 		if err := genScopedWithClass(sb, "div", "nav-center", cache, func(sb *strings.Builder, cache interface{}) error {
-			sb.WriteString("<a class=\"brand\" href=\"/\">Awesome Pants</a>")
+			sb.WriteString(fmt.Sprintf("<a href=\"%s/\">Awesome Pants</a>", linkPrefix))
 			return nil
 		}); err != nil {
 			return err

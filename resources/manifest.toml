@@ -1,0 +1,2 @@
+[manifest]
+static = ["resources/static/antlr.svg"]
