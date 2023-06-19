@@ -33,3 +33,16 @@
   pypi = "https://pypi.org/project/pants-backend-k8s/"
   icon = "https://icongr.am/material/kubernetes.svg?color=currentColor&colored=true"
   status = "Experimental"
+
+
+[[plugins]]
+  name = "robotpajamas.pants.scie"
+  pypi = "https://pypi.org/project/robotpajamas.pants.scie/"
+  icon = "https://icongr.am/simple/python.svg?colored=true"
+  status = "Experimental"
+
+[[plugins]]
+  name = "pants-py-deploy"
+  pypi = "https://pypi.org/project/pants-py-deploy/"
+  icon = "https://icongr.am/simple/docker.svg?colored=true"
+  status = "Experimental"

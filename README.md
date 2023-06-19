@@ -26,6 +26,12 @@ Each list is contained in a separate file in `/resources/`: `plugins` for plugin
 - [pants-backend-secrets](https://pypi.org/project/pants-backend-secrets/) - Version: 0.2.0  
   A secrets plumbing plugin for the Pants build system
 
+- [pants-py-deploy](https://pypi.org/project/pants-py-deploy/) - Version: 0.0.20  
+  Make it easy to maintain docker-compose files and helm-charts across projects with pants-py-deploy
+
+- [robotpajamas.pants.scie](https://pypi.org/project/robotpajamas.pants.scie/) - Version: 0.0.2  
+  A Pants plugin adding support for packaging SCIE.
+
 
 ## Recipes
 
