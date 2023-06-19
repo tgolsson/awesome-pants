@@ -26,9 +26,11 @@ func genScopedWithClass(sb *strings.Builder, scope string, class string, cache i
 }
 
 func genHead(sb *strings.Builder, cache interface{}, pageTitle string) error {
+	linkPrefix := "."
 	if pageTitle == "" {
 		pageTitle = "Awesome Pants"
 	} else {
+		linkPrefix = ".."
 		pageTitle = fmt.Sprintf("Awesome Pants - %s", pageTitle)
 	}
 
@@ -67,6 +69,12 @@ https://cdn.jsdelivr.net/npm/chota@0.9.2/dist/chota.min.css
       document.body.classList.add('dark');
     }
   </script>`)
+	sb.WriteString(fmt.Sprintf(`
+<link rel="apple-touch-icon" sizes="180x180" href="%s/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="%s/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="%s/favicon-16x16.png">
+<link rel="manifest" href="%s/site.webmanifest">
+`, linkPrefix, linkPrefix, linkPrefix, linkPrefix))
 
 	return nil
 }
