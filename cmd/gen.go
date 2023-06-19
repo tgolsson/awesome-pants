@@ -36,6 +36,11 @@ func loadManifest(path string) (*Manifest, error) {
 
 func copyFile(src, dst string) error {
 	fmt.Printf("Copying %s to %s\n", src, dst)
+	outputDirectory := filepath.Dir(dst)
+	if _, err := ensureOutputPath(outputDirectory); err != nil {
+		return err
+	}
+
 	sourceFileStat, err := os.Stat(src)
 	if err != nil {
 		return fmt.Errorf("failed to stat %s: %w", src, err)
@@ -147,6 +152,7 @@ func copyStaticFiles(manifest *Manifest, outputPath string) error {
 
 	return nil
 }
+
 func ensureOutputPath(path string) (string, error) {
 	// Has to be a directory
 	if !strings.HasSuffix(path, "/") {

@@ -8,23 +8,29 @@ Each list is contained in a separate file in `/resources/`: `plugins` for plugin
 
 ## Plugins
 
-- [pants-backend-bitwarden](https://pypi.org/project/pants-backend-bitwarden/) - Version: 0.1.0  
+- [pants-backend-bitwarden](https://pypi.org/project/pants-backend-bitwarden/) - Version: 0.2.0  
   A Bitwarden plugin for the Pants build system
 
-- [pants-backend-k8s](https://pypi.org/project/pants-backend-k8s/) - Version: 0.1.1  
+- [pants-backend-k8s](https://pypi.org/project/pants-backend-k8s/) - Version: 0.2.0  
   A Kubernetes plugin for the Pants build system
 
-- [pants-backend-kustomize](https://pypi.org/project/pants-backend-kustomize/) - Version: 0.1.2  
+- [pants-backend-kustomize](https://pypi.org/project/pants-backend-kustomize/) - Version: 0.2.0  
   A Kustomize plugin for the Pants build system
 
-- [pants-backend-mdbook](https://pypi.org/project/pants-backend-mdbook/) - Version: 0.1.3  
+- [pants-backend-mdbook](https://pypi.org/project/pants-backend-mdbook/) - Version: 0.2.0  
   A  MdBook documentation builder plugin for the Pants buildsystem.
 
-- [pants-backend-oci](https://pypi.org/project/pants-backend-oci/) - Version: 0.3.1  
+- [pants-backend-oci](https://pypi.org/project/pants-backend-oci/) - Version: 0.4.0  
   An OCI plugin for the Pants build system
 
-- [pants-backend-secrets](https://pypi.org/project/pants-backend-secrets/) - Version: 0.1.0  
+- [pants-backend-secrets](https://pypi.org/project/pants-backend-secrets/) - Version: 0.2.0  
   A secrets plumbing plugin for the Pants build system
+
+- [pants-py-deploy](https://pypi.org/project/pants-py-deploy/) - Version: 0.0.20  
+  Make it easy to maintain docker-compose files and helm-charts across projects with pants-py-deploy
+
+- [robotpajamas.pants.scie](https://pypi.org/project/robotpajamas.pants.scie/) - Version: 0.0.2  
+  A Pants plugin adding support for packaging SCIE.
 
 
 ## Recipes

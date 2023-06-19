@@ -123,7 +123,11 @@ func RefreshPlugin(plugin *Plugin) error {
 
 	plugin.Metadata.Summary = packageInfo.Info.Summary
 	plugin.Metadata.LatestVersion = packageInfo.Info.Version
-	plugin.Metadata.Tags = strings.Split(packageInfo.Info.Keywords, ",")
+	if strings.Contains(packageInfo.Info.Keywords, ",") {
+		plugin.Metadata.Tags = strings.Split(packageInfo.Info.Keywords, ",")
+	} else {
+		plugin.Metadata.Tags = strings.Split(packageInfo.Info.Keywords, " ")
+	}
 	plugin.Metadata.License = packageInfo.Info.License
 
 	for version, files := range packageInfo.Releases {

@@ -15,5 +15,5 @@ url = "https://github.com/pantsbuild/example-adhoc"
 icons = [
     "https://icongr.am/simple/javascript.svg?colored=true",
     "https://icongr.am/simple/openapiinitiative.svg?colored=true",
-    "/static/antlr.svg"
+    "../static/antlr.svg"
 ]

@@ -8,9 +8,13 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-oci/"
     summary = "An OCI plugin for the Pants build system"
-    latest_version = "0.3.1"
+    latest_version = "0.4.0"
     tags = ["pantsbuild", "pants", "docker", "oci", "container"]
-    license = ""
+    license = "MIT License  Copyright (c) 2022 Tom Solberg  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:  The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.  THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."
+
+    [[plugins.metadata.versions]]
+      version = "0.4.0"
+      release_date = "2023-06-18T19:28:49"
 
     [[plugins.metadata.versions]]
       version = "0.3.1"
@@ -32,9 +36,9 @@
       version = "0.1.0"
       release_date = "2022-11-13T15:50:06"
   [plugins.stats]
-    last_day = 5
-    last_week = 11
-    last_month = 96
+    last_day = 72
+    last_week = 81
+    last_month = 168
 
 [[plugins]]
   name = "pants-backend-mdbook"
@@ -46,9 +50,13 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-mdbook/"
     summary = "A  MdBook documentation builder plugin for the Pants buildsystem."
-    latest_version = "0.1.3"
+    latest_version = "0.2.0"
     tags = ["pantsbuild", "pants", "backend", "mdbook", "markdown"]
     license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-06-18T19:28:41"
 
     [[plugins.metadata.versions]]
       version = "0.1.3"
@@ -62,9 +70,9 @@
       version = "0.1.1"
       release_date = "2022-11-11T23:46:09"
   [plugins.stats]
-    last_day = 2
-    last_week = 17
-    last_month = 141
+    last_day = 75
+    last_week = 92
+    last_month = 216
 
 [[plugins]]
   name = "pants-backend-bitwarden"
@@ -76,17 +84,21 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-bitwarden/"
     summary = "A Bitwarden plugin for the Pants build system"
-    latest_version = "0.1.0"
+    latest_version = "0.2.0"
     tags = ["pantsbuild", "pants", "backend", "bitwarden"]
     license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-06-18T19:28:57"
 
     [[plugins.metadata.versions]]
       version = "0.1.0"
       release_date = "2023-02-10T15:54:08"
   [plugins.stats]
-    last_day = 1
-    last_week = 2
-    last_month = 9
+    last_day = 55
+    last_week = 57
+    last_month = 64
 
 [[plugins]]
   name = "pants-backend-secrets"
@@ -98,17 +110,21 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-secrets/"
     summary = "A secrets plumbing plugin for the Pants build system"
-    latest_version = "0.1.0"
+    latest_version = "0.2.0"
     tags = ["pantsbuild", "pants", "backend", "secrets"]
     license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-06-18T19:28:45"
 
     [[plugins.metadata.versions]]
       version = "0.1.0"
       release_date = "2023-02-10T15:54:04"
   [plugins.stats]
-    last_day = 1
-    last_week = 3
-    last_month = 9
+    last_day = 63
+    last_week = 66
+    last_month = 72
 
 [[plugins]]
   name = "pants-backend-kustomize"
@@ -120,9 +136,13 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-kustomize/"
     summary = "A Kustomize plugin for the Pants build system"
-    latest_version = "0.1.2"
+    latest_version = "0.2.0"
     tags = ["pantsbuild", "pants", "backend", "kustomize", "kubernetes"]
     license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-06-18T19:29:01"
 
     [[plugins.metadata.versions]]
       version = "0.1.2"
@@ -136,9 +156,9 @@
       version = "0.1.0"
       release_date = "2022-11-13T13:07:55"
   [plugins.stats]
-    last_day = 2
-    last_week = 17
-    last_month = 150
+    last_day = 79
+    last_week = 96
+    last_month = 229
 
 [[plugins]]
   name = "pants-backend-k8s"
@@ -150,9 +170,13 @@
     author_email = "me@sbg.dev"
     website = "https://pypi.org/project/pants-backend-k8s/"
     summary = "A Kubernetes plugin for the Pants build system"
-    latest_version = "0.1.1"
+    latest_version = "0.2.0"
     tags = ["pantsbuild", "pants", "backend", "kubernetes"]
     license = ""
+
+    [[plugins.metadata.versions]]
+      version = "0.2.0"
+      release_date = "2023-06-18T19:28:53"
 
     [[plugins.metadata.versions]]
       version = "0.1.1"
@@ -162,6 +186,122 @@
       version = "0.1.0"
       release_date = "2022-11-13T12:46:24"
   [plugins.stats]
-    last_day = 2
-    last_week = 18
-    last_month = 148
+    last_day = 83
+    last_week = 100
+    last_month = 229
+
+[[plugins]]
+  name = "robotpajamas.pants.scie"
+  pypi = "https://pypi.org/project/robotpajamas.pants.scie/"
+  status = "Experimental"
+  icon = "https://icongr.am/simple/python.svg?colored=true"
+  [plugins.metadata]
+    author = ""
+    author_email = ""
+    website = "https://pypi.org/project/robotpajamas.pants.scie/"
+    summary = "A Pants plugin adding support for packaging SCIE."
+    latest_version = "0.0.2"
+    tags = [""]
+    license = "Apache License, Version 2.0"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.2"
+      release_date = "2023-05-22T19:19:33"
+  [plugins.stats]
+    last_day = 1
+    last_week = 3
+    last_month = 48
+
+[[plugins]]
+  name = "pants-py-deploy"
+  pypi = "https://pypi.org/project/pants-py-deploy/"
+  status = "Experimental"
+  icon = "https://icongr.am/simple/docker.svg?colored=true"
+  [plugins.metadata]
+    author = "Espen Albert"
+    author_email = ""
+    website = "https://github.com/EspenAlbert/py-libs"
+    summary = "Make it easy to maintain docker-compose files and helm-charts across projects with pants-py-deploy"
+    latest_version = "0.0.20"
+    tags = [""]
+    license = "MIT"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.20"
+      release_date = "2023-06-05T06:59:52"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.18rc1"
+      release_date = "2023-05-30T12:39:51"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.18"
+      release_date = "2023-05-30T12:37:34"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.17"
+      release_date = "2023-05-09T17:51:04"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.16"
+      release_date = "2023-05-06T09:54:26"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc7"
+      release_date = "2023-05-05T10:10:34"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc6"
+      release_date = "2023-05-05T09:20:33"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc5"
+      release_date = "2023-05-05T08:55:13"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc4"
+      release_date = "2023-05-05T08:44:37"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc3"
+      release_date = "2023-05-05T06:58:34"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc2"
+      release_date = "2023-05-03T14:48:04"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15rc1"
+      release_date = "2023-05-03T14:00:44"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.15"
+      release_date = "2023-05-03T12:58:14"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.14rc4"
+      release_date = "2023-05-03T12:55:06"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.14rc3"
+      release_date = "2023-05-03T12:51:50"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.14rc2"
+      release_date = "2023-05-03T12:33:07"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.14rc1"
+      release_date = "2023-05-03T08:46:04"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.13"
+      release_date = "2023-05-02T13:37:16"
+
+    [[plugins.metadata.versions]]
+      version = "0.0.10"
+      release_date = "2023-05-02T09:54:09"
+  [plugins.stats]
+    last_day = 19
+    last_week = 63
+    last_month = 254
